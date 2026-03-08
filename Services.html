@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Dr Ikponmwosa Irene Practice</title>
+    <meta name="description" content="Explore our comprehensive medical services including general consultations, chronic disease management, vaccinations, minor procedures, occupational health, and more at Dr Ikponmwosa Irene Practice, Uitenhage.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17939250098"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17939250098');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --teal: #0C7B7B;
+            --teal-dark: #095E5E;
+            --teal-light: #E6F5F5;
+            --navy: #0A1628;
+            --sand: #F8F5F0;
+            --gold: #C8A35F;
+            --white: #FFFFFF;
+            --gray-100: #F4F4F5;
+            --gray-300: #D1D5DB;
+            --gray-500: #6B7280;
+            --gray-700: #374151;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--navy);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* === UTILITY BAR === */
+        .utility-bar {
+            background: var(--navy);
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            padding: 10px 0;
+        }
+
+        .utility-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .utility-bar a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .utility-bar a:hover { color: var(--gold); }
+
+        .utility-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .utility-links .sep {
+            width: 1px;
+            height: 14px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === NAV === */
+        .navbar {
+            background: var(--white);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+            transition: box-shadow 0.3s;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-mark::after {
+            content: '+';
+            color: white;
+            font-size: 26px;
+            font-weight: 300;
+        }
+
+        .logo-text h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        .logo-text span {
+            font-size: 11px;
+            color: var(--teal);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 14.5px;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--teal); }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--teal);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-links a.active { color: var(--teal); }
+        .nav-links a.active::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--teal);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--teal-dark) !important; color: white !important; }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* === PAGE HEADER === */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, #132840 60%, var(--teal-dark) 100%);
+            color: white;
+            padding: 64px 0 72px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(12,123,123,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .page-header h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 44px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            animation: fadeInUp 0.7s ease;
+        }
+
+        .page-header p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.7);
+            max-width: 560px;
+            animation: fadeInUp 0.7s ease 0.1s backwards;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+            animation: fadeInUp 0.7s ease;
+        }
+
+        .breadcrumb a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover { color: var(--gold); }
+
+        /* === SECTIONS === */
+        section { padding: 80px 0; }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 36px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .section-subtitle {
+            font-size: 16.5px;
+            color: var(--gray-500);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .section-header {
+            margin-bottom: 56px;
+            text-align: center;
+        }
+
+        .section-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        /* === SERVICE DETAIL CARDS === */
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.4s;
+        }
+
+        .service-detail:hover {
+            box-shadow: 0 16px 56px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+
+        .service-detail:nth-child(even) {
+            direction: rtl;
+        }
+
+        .service-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .service-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 56px 40px;
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+        }
+
+        .service-visual .big-icon {
+            font-size: 64px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-visual::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .sv-teal { background: linear-gradient(135deg, var(--teal), var(--teal-dark)); }
+        .sv-navy { background: linear-gradient(135deg, var(--navy), #1a3050); }
+        .sv-gold { background: linear-gradient(135deg, #C8A35F, #A68340); }
+        .sv-green { background: linear-gradient(135deg, #059669, #047857); }
+        .sv-blue { background: linear-gradient(135deg, #2563EB, #1D4ED8); }
+        .sv-rose { background: linear-gradient(135deg, #E11D48, #BE123C); }
+        .sv-purple { background: linear-gradient(135deg, #7C3AED, #6D28D9); }
+        .sv-amber { background: linear-gradient(135deg, #D97706, #B45309); }
+
+        .service-content {
+            padding: 48px 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-content .service-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        .service-content h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 14px;
+            color: var(--navy);
+        }
+
+        .service-content p {
+            font-size: 15px;
+            color: var(--gray-500);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .service-includes {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 16px;
+        }
+
+        .service-includes li {
+            font-size: 13.5px;
+            color: var(--gray-700);
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .service-includes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* === MEDICAL AID SECTION === */
+        .medaid-section {
+            background: var(--sand);
+        }
+
+        .medaid-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .medaid-text p {
+            font-size: 16px;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .medaid-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .medaid-list li {
+            background: var(--white);
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 14.5px;
+            font-weight: 500;
+            color: var(--navy);
+            border: 1px solid rgba(0,0,0,0.04);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .medaid-list li .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--teal);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .medaid-card {
+            background: var(--navy);
+            color: white;
+            border-radius: 20px;
+            padding: 48px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .medaid-card::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(12,123,123,0.2), transparent 70%);
+            border-radius: 50%;
+            bottom: -60px;
+            right: -60px;
+        }
+
+        .medaid-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        .medaid-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .medaid-card .price-note {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 8px;
+        }
+
+        .medaid-card .price-note strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .medaid-card .price-note span {
+            font-size: 13.5px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        /* === CTA BANNER === */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+            color: white;
+            padding: 72px 0;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 14px;
+        }
+
+        .cta-banner p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--teal);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 1.5px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline-white:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.7);
+            padding: 56px 0 32px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 22px;
+            color: white;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            max-width: 320px;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+        }
+
+        .footer-reg {
+            background: rgba(255,255,255,0.05);
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        /* === WHATSAPP FAB === */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 36px rgba(37,211,102,0.45);
+        }
+
+        .whatsapp-fab svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px 24px;
+                box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+                gap: 16px;
+            }
+
+            .service-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .service-detail:nth-child(even) {
+                direction: ltr;
+            }
+
+            .service-visual {
+                min-height: 200px;
+            }
+
+            .medaid-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h2 { font-size: 32px; }
+            .section-title { font-size: 28px; }
+        }
+
+        @media (max-width: 600px) {
+            .utility-bar .container { justify-content: center; text-align: center; }
+            .utility-links { flex-wrap: wrap; justify-content: center; }
+            .service-content { padding: 32px 24px; }
+            .service-content h3 { font-size: 22px; }
+            .service-includes { grid-template-columns: 1fr; }
+            .medaid-list { grid-template-columns: 1fr; }
+            .medaid-card { padding: 32px 24px; }
+            .page-header h2 { font-size: 28px; }
+            .cta-banner h2 { font-size: 28px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; max-width: 300px; }
+            .footer-top { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Utility Bar -->
+    <div class="utility-bar">
+        <div class="container">
+            <div class="utility-links">
+                <a href="tel:+27630030044">📞 063 003 0044</a>
+                <div class="sep"></div>
+                <a href="mailto:ikponmwosai185@gmail.com">✉️ ikponmwosai185@gmail.com</a>
+                <div class="sep"></div>
+                <span>📍 141 Acacia Street, Rosedale, Uitenhage</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    <h1>Dr Ikponmwosa Irene</h1>
+                    <span>Medical Practice</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="booking.html">Book</a></li>
+                <li><a href="tel:+27630030044" class="nav-cta">Call Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Our Services</div>
+            <h2>Our Services</h2>
+            <p>Comprehensive medical care for individuals and families — all under one roof in Uitenhage.</p>
+        </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">What We Offer</div>
+                <h2 class="section-title">Quality Healthcare Services</h2>
+                <p class="section-subtitle">From routine check-ups to specialised care, our practice provides a broad range of medical services delivered with professionalism and compassion.</p>
+            </div>
+
+            <!-- General Consultations -->
+            <div class="service-detail fade-in">
+                <div class="service-visual sv-teal">
+                    <div class="big-icon">🩺</div>
+                </div>
+                <div class="service-content">
+                    <div class="service-tag">Primary Care</div>
+                    <h3>General Consultations</h3>
+                    <p>Our practice provides thorough medical consultations for patients of all ages. We take time to listen, assess, and develop personalised treatment plans tailored to your health needs.</p>
+                    <ul class="service-includes">
+                        <li>Physical examinations</li>
+                        <li>Acute illness treatment</li>
+                        <li>Diagnosis &amp; referrals</li>
+                        <li>Prescription management</li>
+                        <li>Health screenings</li>
+                        <li>Follow-up consultations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Chronic Disease Management -->
+            <div class="service-detail fade-in">
+                <div class="service-visual sv-navy">
+                    <div class="big-icon">❤️</div>
+                </div>
+                <div class="service-content">
+                    <div class="service-tag">Ongoing Care</div>
+                    <h3>Chronic Disease Management</h3>
+                    <p>We provide continuous, structured care for patients living with chronic conditions. Our goal is to help you manage your health effectively and maintain the best quality of life.</p>
+                    <ul class="service-includes">
+                        <li>Diabetes management</li>
+                        <li>Hypertension control</li>
+                        <li>Asthma &amp; COPD care</li>
+                        <li>Cholesterol monitoring</li>
+                        <li>HIV/AIDS management</li>
+                        <li>Regular blood work</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Vaccinations -->
+            <div class="service-detail fade-in">
+                <div class="service-visual sv-green">
+                    <div class="big-icon">💉</div>
+                </div>
+                <div class="service-content">
+                    <div class="service-tag">Prevention</div>
+                    <h3>Vaccinations &amp; Immunisations</h3>
+                    <p>Stay protected with routine and travel vaccinations for children and adults. We follow the latest immunisation schedules recommended by the Department of Health.</p>
+                    <ul class="service-includes">
+                        <li>Childhood immunisations</li>
+                        <li>Flu vaccinations</li>
+                        <li>Travel vaccines</li>
+                        <li>COVID-19 boosters</li>
+                        <li>Hepatitis B vaccine</li>
+                        <li>Tetanus boosters</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Minor Procedures -->
+            <div class="service-detail fade-in">
+                <div class="service-visual sv-rose">
+                    <div class="big-icon">🩹</div>
+                </div>
+                <div class="service-content">
+                    <div class="service-tag">In-Office Procedures</div>
+                    <h3>Minor Procedures</h3>
+                    <p>We perform a range of minor surgical procedures safely in our practice, saving you the inconvenience of a hospital visit for non-complex issues.</p>
+                    <ul class="service-includes">
+                        <li>Wound care &amp; suturing</li>
+                        <li>Abscess drainage</li>
+                        <li>Ingrown toenail removal</li>
+                        <li>Lesion removal</li>
+                        <li>Foreign body removal</li>
+                        <li>Ear syringing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Medical Certificates -->
+            <div class="service-detail fade-in">
+                <div class="service-visual sv-blue">
+                    <div class="big-icon">📋</div>
+                </div>
+                <div class="service-content">
+                    <div class="service-tag">Documentation</div>
+                    <h3>Medical Certificates &amp; Reports</h3>
+                    <p>We issue a variety of medical documents required for employment, education, insurance, and legal purposes — all compliant with South African regulations.</p>
+                    <ul class="service-includes">
+                        <li>Sick notes (sick leave)</li>
+                        <li>Fitness certificates</li>
+                        <li>Medical reports</li>
+                        <li>Insurance assessments</li>
+                        <li>School health forms</li>
+                        <li>Driver's licence medicals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Occupational Health -->
+            <div class="service-detail fade-in">
+                <div class="service-visual sv-gold">
+                    <div class="big-icon">🏢</div>
+                </div>
+                <div class="service-content">
+                    <div class="service-tag">Workplace Health</div>
+                    <h3>Occupational Health Services</h3>
+                    <p>We partner with local businesses and employers to ensure their workforce is healthy, fit, and compliant with occupational health regulations.</p>
+                    <ul class="service-includes">
+                        <li>Pre-employment medicals</li>
+                        <li>Fitness assessments</li>
+                        <li>Periodic health screening</li>
+                        <li>Exit medical examinations</li>
+                        <li>Drug &amp; alcohol testing</li>
+                        <li>Audiometry &amp; spirometry</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Family Health -->
+            <div class="service-detail fade-in">
+                <div class="service-visual sv-purple">
+                    <div class="big-icon">👨‍👩‍👧‍👦</div>
+                </div>
+                <div class="service-content">
+                    <div class="service-tag">Family Care</div>
+                    <h3>Family &amp; Women's Health</h3>
+                    <p>We provide dedicated healthcare services for the whole family, including women's health screenings, family planning, and child wellness check-ups.</p>
+                    <ul class="service-includes">
+                        <li>Family planning</li>
+                        <li>Pap smears</li>
+                        <li>Pregnancy tests</li>
+                        <li>Child wellness checks</li>
+                        <li>Growth monitoring</li>
+                        <li>Nutritional guidance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Emergency -->
+            <div class="service-detail fade-in">
+                <div class="service-visual sv-amber">
+                    <div class="big-icon">🚨</div>
+                </div>
+                <div class="service-content">
+                    <div class="service-tag">Urgent Care</div>
+                    <h3>After-Hours &amp; Urgent Enquiries</h3>
+                    <p>While we are not a 24-hour facility, we accommodate urgent medical concerns during practice hours and can advise you on after-hours options.</p>
+                    <ul class="service-includes">
+                        <li>Same-day appointments</li>
+                        <li>Walk-in consultations</li>
+                        <li>Urgent care guidance</li>
+                        <li>Emergency referrals</li>
+                        <li>WhatsApp consultations</li>
+                        <li>Telephonic triage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Aid Section -->
+    <section class="medaid-section">
+        <div class="container">
+            <div class="medaid-grid">
+                <div class="medaid-text fade-in">
+                    <div class="section-label">Payment &amp; Medical Aid</div>
+                    <h2 class="section-title">Accepted Medical Aids &amp; Payment</h2>
+                    <p>We accept most major South African medical aid schemes. Cash and private patients are also welcome. Please bring your medical aid card to every visit.</p>
+                    <div class="medaid-list">
+                        <li><span class="dot"></span> Discovery Health</li>
+                        <li><span class="dot"></span> Bonitas</li>
+                        <li><span class="dot"></span> GEMS</li>
+                        <li><span class="dot"></span> Momentum Health</li>
+                        <li><span class="dot"></span> Medshield</li>
+                        <li><span class="dot"></span> Bestmed</li>
+                        <li><span class="dot"></span> Profmed</li>
+                        <li><span class="dot"></span> Other schemes</li>
+                    </div>
+                </div>
+                <div class="medaid-card fade-in">
+                    <h3>Private &amp; Cash Patients</h3>
+                    <p>We welcome patients without medical aid. Our consultation fees are competitive and transparent, with no hidden costs.</p>
+                    <p>Payment can be made by cash, card, or EFT at the time of your visit.</p>
+                    <div class="price-note">
+                        <strong>💡 Good to know</strong>
+                        <span>Please enquire about consultation fees when booking your appointment. We will always discuss costs upfront so there are no surprises.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready to Book Your Visit?</h2>
+            <p>Schedule your appointment today — by phone, WhatsApp, or our online form.</p>
+            <div class="cta-buttons">
+                <a href="booking.html" class="btn btn-white">📅 Book an Appointment</a>
+                <a href="https://wa.me/27630030044?text=Hello%20Dr%20Ikponmwosa%20Irene%20Practice%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="btn btn-outline-white">💬 WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Dr Ikponmwosa Irene Practice</h3>
+                    <p>Providing compassionate, quality healthcare for individuals and families in Uitenhage and the surrounding Eastern Cape communities.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="booking.html">Book</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <a href="tel:+27630030044">063 003 0044</a>
+                    <a href="mailto:ikponmwosai185@gmail.com">ikponmwosai185@gmail.com</a>
+                    <a href="https://wa.me/27630030044" target="_blank" rel="noopener">WhatsApp Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Dr Ikponmwosa Irene Practice. All rights reserved.</span>
+                <span class="footer-reg">HPCSA: MP0718181 &nbsp;|&nbsp; Practice: 1232126</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/27630030044?text=Hello%20Dr%20Ikponmwosa%20Irene%20Practice%2C%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.853L.057 23.765l6.063-1.59A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.785a9.77 9.77 0 01-5.39-1.61l-.386-.23-3.598.943.96-3.505-.253-.402A9.746 9.746 0 012.215 12 9.785 9.785 0 0112 2.215 9.785 9.785 0 0121.785 12 9.785 9.785 0 0112 21.785z"/></svg>
+    </a>
+
+    <script>
+        // Nav scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Fade in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
