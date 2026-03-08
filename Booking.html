@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment | Dr Ikponmwosa Irene Practice</title>
+    <meta name="description" content="Book your appointment with Dr Ikponmwosa Irene Practice in Uitenhage. Call, WhatsApp, or use our online booking form.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17939250098"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17939250098');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --teal: #0C7B7B;
+            --teal-dark: #095E5E;
+            --teal-light: #E6F5F5;
+            --navy: #0A1628;
+            --sand: #F8F5F0;
+            --gold: #C8A35F;
+            --white: #FFFFFF;
+            --gray-100: #F4F4F5;
+            --gray-300: #D1D5DB;
+            --gray-500: #6B7280;
+            --gray-700: #374151;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--navy);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* === UTILITY BAR === */
+        .utility-bar {
+            background: var(--navy);
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            padding: 10px 0;
+        }
+
+        .utility-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .utility-bar a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .utility-bar a:hover { color: var(--gold); }
+
+        .utility-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .utility-links .sep {
+            width: 1px;
+            height: 14px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === NAV === */
+        .navbar {
+            background: var(--white);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+            transition: box-shadow 0.3s;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-mark::after {
+            content: '+';
+            color: white;
+            font-size: 26px;
+            font-weight: 300;
+        }
+
+        .logo-text h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        .logo-text span {
+            font-size: 11px;
+            color: var(--teal);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 14.5px;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--teal); }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--teal);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-links a.active {
+            color: var(--teal);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--teal);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--teal-dark) !important; color: white !important; }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* === PAGE HEADER === */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, #132840 60%, var(--teal-dark) 100%);
+            color: white;
+            padding: 64px 0 72px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(12,123,123,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .page-header h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 44px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            animation: fadeInUp 0.7s ease;
+        }
+
+        .page-header p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.7);
+            max-width: 520px;
+            animation: fadeInUp 0.7s ease 0.1s backwards;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+            animation: fadeInUp 0.7s ease;
+        }
+
+        .breadcrumb a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover { color: var(--gold); }
+
+        /* === BOOKING SECTION === */
+        section {
+            padding: 80px 0;
+        }
+
+        .booking-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        /* === FORM === */
+        .booking-form {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 20px;
+            padding: 44px 40px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.04);
+        }
+
+        .booking-form p.intro {
+            font-size: 15px;
+            color: var(--gray-500);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 7px;
+        }
+
+        .form-group label .required {
+            color: #EF4444;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1.5px solid var(--gray-300);
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Outfit', sans-serif;
+            color: var(--navy);
+            transition: all 0.2s;
+            background: var(--white);
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(12,123,123,0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray-300);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236B7280' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 5.646a.5.5 0 01.708 0L8 8.293l2.646-2.647a.5.5 0 01.708.708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 010-.708z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: white;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-primary:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(12,123,123,0.3);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        /* === SIDEBAR === */
+        .booking-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-card {
+            background: var(--sand);
+            border-radius: 16px;
+            padding: 32px 28px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .sidebar-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 18px;
+        }
+
+        .quick-book-option {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 20px;
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .quick-book-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .quick-book-option .qb-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .quick-book-option .qb-icon.phone { background: #DBEAFE; }
+        .quick-book-option .qb-icon.whatsapp { background: #D1FAE5; }
+        .quick-book-option .qb-icon.email { background: #FEF3C7; }
+
+        .quick-book-option strong {
+            display: block;
+            font-size: 14.5px;
+            margin-bottom: 2px;
+        }
+
+        .quick-book-option span {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 14.5px;
+            color: var(--gray-700);
+            align-items: flex-start;
+        }
+
+        .info-list li:last-child { border-bottom: none; }
+
+        .info-list li .icon {
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .hours-mini {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            font-size: 14px;
+        }
+
+        .hours-mini:last-child { border-bottom: none; }
+
+        .hours-mini .day { color: var(--gray-500); }
+        .hours-mini .time { font-weight: 600; color: var(--navy); }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.7);
+            padding: 56px 0 32px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 22px;
+            color: white;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            max-width: 320px;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+        }
+
+        .footer-reg {
+            background: rgba(255,255,255,0.05);
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        /* === WHATSAPP FAB === */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 36px rgba(37,211,102,0.45);
+        }
+
+        .whatsapp-fab svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px 24px;
+                box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+                gap: 16px;
+            }
+            .booking-layout {
+                grid-template-columns: 1fr;
+            }
+            .page-header h2 { font-size: 32px; }
+        }
+
+        @media (max-width: 600px) {
+            .utility-bar .container { justify-content: center; text-align: center; }
+            .utility-links { flex-wrap: wrap; justify-content: center; }
+            .form-row { grid-template-columns: 1fr; }
+            .booking-form { padding: 32px 24px; }
+            .page-header h2 { font-size: 28px; }
+            .footer-top { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Utility Bar -->
+    <div class="utility-bar">
+        <div class="container">
+            <div class="utility-links">
+                <a href="tel:+27630030044">📞 063 003 0044</a>
+                <div class="sep"></div>
+                <a href="mailto:ikponmwosai185@gmail.com">✉️ ikponmwosai185@gmail.com</a>
+                <div class="sep"></div>
+                <span>📍 141 Acacia Street, Rosedale, Uitenhage</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">
+                    <h1>Dr Ikponmwosa Irene</h1>
+                    <span>Medical Practice</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="booking.html" class="active">Book</a></li>
+                <li><a href="tel:+27630030044" class="nav-cta">Call Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Book an Appointment</div>
+            <h2>Book an Appointment</h2>
+            <p>Schedule your visit with Dr Ikponmwosa Irene. We look forward to taking care of you.</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section>
+        <div class="container">
+            <div class="booking-layout">
+
+                <!-- Form -->
+                <div class="booking-form fade-in">
+                    <div class="section-label">Appointment Request</div>
+                    <h2 class="section-title">Fill in Your Details</h2>
+                    <p class="intro">Complete the form below to request an appointment. Our team will confirm your booking via phone or WhatsApp within 24 hours.</p>
+
+                    <form id="bookingForm" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" placeholder="e.g. Thandi" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" placeholder="e.g. Mkhize" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Phone Number <span class="required">*</span></label>
+                                <input type="tel" placeholder="e.g. 063 000 0000" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="e.g. name@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ID Number</label>
+                            <input type="text" placeholder="South African ID Number (optional)">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Preferred Date <span class="required">*</span></label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Time</label>
+                                <select>
+                                    <option value="">Select a time</option>
+                                    <option>08:00 – 09:00</option>
+                                    <option>09:00 – 10:00</option>
+                                    <option>10:00 – 11:00</option>
+                                    <option>11:00 – 12:00</option>
+                                    <option>12:00 – 13:00</option>
+                                    <option>13:00 – 14:00</option>
+                                    <option>14:00 – 15:00</option>
+                                    <option>15:00 – 16:00</option>
+                                    <option>16:00 – 17:00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Type of Visit</label>
+                            <select>
+                                <option value="">Select visit type</option>
+                                <option>General Consultation</option>
+                                <option>Chronic Disease Follow-Up</option>
+                                <option>Vaccination</option>
+                                <option>Medical Certificate</option>
+                                <option>Minor Procedure</option>
+                                <option>Occupational Health</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Medical Aid</label>
+                            <select>
+                                <option value="">Do you have medical aid?</option>
+                                <option>Yes – Discovery Health</option>
+                                <option>Yes – Bonitas</option>
+                                <option>Yes – Gems</option>
+                                <option>Yes – Momentum Health</option>
+                                <option>Yes – Medshield</option>
+                                <option>Yes – Other (specify in message)</option>
+                                <option>No – Private / Cash Patient</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Additional Notes</label>
+                            <textarea placeholder="Tell us briefly about your symptoms or reason for the visit..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            ✉️ &nbsp;Submit Appointment Request
+                        </button>
+
+                        <p class="form-note">By submitting, you consent to being contacted by our practice to confirm your appointment. Walk-ins are also welcome during practice hours.</p>
+                    </form>
+
+                    <div id="successMessage" style="display:none; text-align:center; padding:40px 20px;">
+                        <div style="font-size:48px; margin-bottom:16px;">✅</div>
+                        <h3 style="font-family:'DM Serif Display',serif; font-size:24px; margin-bottom:12px;">Request Submitted!</h3>
+                        <p style="color:var(--gray-500); font-size:15px; line-height:1.7;">Thank you. We will contact you within 24 hours to confirm your appointment. For urgent enquiries, please call or WhatsApp <strong>063 003 0044</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="booking-sidebar">
+                    <div class="sidebar-card fade-in">
+                        <h3>Quick Booking</h3>
+                        <a href="tel:+27630030044" class="quick-book-option">
+                            <div class="qb-icon phone">📞</div>
+                            <div>
+                                <strong>Call Us</strong>
+                                <span>063 003 0044</span>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/27630030044?text=Hello%20Dr%20Ikponmwosa%20Irene%20Practice%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="quick-book-option">
+                            <div class="qb-icon whatsapp">💬</div>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>Tap to chat with us</span>
+                            </div>
+                        </a>
+                        <a href="mailto:ikponmwosai185@gmail.com?subject=Appointment%20Request" class="quick-book-option">
+                            <div class="qb-icon email">✉️</div>
+                            <div>
+                                <strong>Email</strong>
+                                <span>ikponmwosai185@gmail.com</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="sidebar-card fade-in">
+                        <h3>Practice Hours</h3>
+                        <div class="hours-mini"><span class="day">Mon – Fri</span><span class="time">8:00 AM – 5:00 PM</span></div>
+                        <div class="hours-mini"><span class="day">Saturday</span><span class="time">8:00 AM – 1:00 PM</span></div>
+                        <div class="hours-mini"><span class="day">Sunday</span><span class="time">Closed</span></div>
+                        <div class="hours-mini"><span class="day">Holidays</span><span class="time">Closed</span></div>
+                    </div>
+
+                    <div class="sidebar-card fade-in">
+                        <h3>What to Bring</h3>
+                        <ul class="info-list">
+                            <li><span class="icon">🪪</span> Valid South African ID or Passport</li>
+                            <li><span class="icon">💳</span> Medical aid card (if applicable)</li>
+                            <li><span class="icon">💊</span> List of current medications</li>
+                            <li><span class="icon">📄</span> Previous medical records or referral letter</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Dr Ikponmwosa Irene Practice</h3>
+                    <p>Providing compassionate, quality healthcare for individuals and families in Uitenhage and the surrounding Eastern Cape communities.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="booking.html">Book</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <a href="tel:+27630030044">063 003 0044</a>
+                    <a href="mailto:ikponmwosai185@gmail.com">ikponmwosai185@gmail.com</a>
+                    <a href="https://wa.me/27630030044" target="_blank" rel="noopener">WhatsApp Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Dr Ikponmwosa Irene Practice. All rights reserved.</span>
+                <span class="footer-reg">HPCSA: MP0718181 &nbsp;|&nbsp; Practice: 1232126</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/27630030044?text=Hello%20Dr%20Ikponmwosa%20Irene%20Practice%2C%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.853L.057 23.765l6.063-1.59A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.785a9.77 9.77 0 01-5.39-1.61l-.386-.23-3.598.943.96-3.505-.253-.402A9.746 9.746 0 012.215 12 9.785 9.785 0 0112 2.215 9.785 9.785 0 0121.785 12 9.785 9.785 0 0112 21.785z"/></svg>
+    </a>
+
+    <script>
+        // Nav scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Fade in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Form submit
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('bookingForm').style.display = 'none';
+            document.querySelector('.booking-form .section-label').style.display = 'none';
+            document.querySelector('.booking-form .section-title').style.display = 'none';
+            document.querySelector('.booking-form .intro').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
